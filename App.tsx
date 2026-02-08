@@ -510,12 +510,67 @@ const Contact: React.FC = () => (
 );
 
 const Footer: React.FC = () => (
-  <footer className="bg-clinical-blueLight py-16 border-t border-clinical-blue/10">
+  <footer className="bg-clinical-white pt-24 pb-12 border-t border-slate-100">
     <div className="container mx-auto px-6">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-        <img src="/images/Zobarstnieciba Lina logo.jpg" alt="Līna logo" className="h-14 w-auto object-contain opacity-80" />
-        <div className="text-slate-400 text-sm font-semibold tracking-wide">
-          © {new Date().getFullYear()} Zobārstniecības klīnika Līna.
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div className="space-y-6">
+          <h3 className="text-2xl font-bold text-clinical-text">Klīnika Līna</h3>
+          <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
+            Mūsdienīga zobārstniecības prakse Saldus centrā, kur tehnoloģijas satiekas ar rūpēm par pacientu.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-clinical-blue">Saites</h4>
+          <ul className="space-y-4">
+            {['Sākums', 'Par mums', 'Pakalpojumi', 'Komanda', 'Kontakti'].map((link) => (
+              <li key={link}>
+                <a
+                  href={`#${link.toLowerCase().replace(' ', '-')}`}
+                  className="text-slate-500 hover:text-clinical-blue transition-colors text-sm font-medium"
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="space-y-6">
+          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-clinical-blue">Pakalpojumi</h4>
+          <ul className="space-y-4">
+            {['Higiēna', 'Ārstēšana', 'Restaurācija', 'Bērnu zobārstniecība'].map((s) => (
+              <li key={s}>
+                <a href="#pakalpojumi" className="text-slate-500 hover:text-clinical-blue transition-colors text-sm font-medium">
+                  {s}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="space-y-6">
+          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-clinical-blue">Kontakti</h4>
+          <ul className="space-y-4 text-sm">
+            <li className="text-slate-500 leading-relaxed">
+              Rīgas iela 20,<br />Saldus, LV-3801
+            </li>
+            <li>
+              <a href="tel:+37127055380" className="text-clinical-text font-bold hover:text-clinical-blue transition-colors">
+                +371 27055380
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p className="text-slate-400 text-xs font-medium">
+          © {new Date().getFullYear()} Zobārstniecības klīnika Līna. Visas tiesības aizsargātas.
+        </p>
+        <div className="flex gap-8">
+          <a href="#" className="text-slate-300 hover:text-clinical-blue transition-colors text-[10px] uppercase font-bold tracking-widest">Privātums</a>
+          <a href="#" className="text-slate-300 hover:text-clinical-blue transition-colors text-[10px] uppercase font-bold tracking-widest">Noteikumi</a>
         </div>
       </div>
     </div>
