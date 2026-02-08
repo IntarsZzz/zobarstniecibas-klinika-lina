@@ -21,8 +21,13 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md py-4 shadow-sm border-b border-clinical-blue/5' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center gap-2 group cursor-pointer">
-          <div className="flex flex-col">
+        <div className="flex items-center gap-4 group cursor-pointer">
+          <img
+            src="/images/Zobarstnieciba Lina logo.jpg"
+            alt="Līna logo"
+            className="h-12 w-auto object-contain mix-blend-multiply"
+          />
+          <div className="flex flex-col border-l border-slate-200 pl-4">
             <span className="font-bold text-xl tracking-tight text-clinical-blue uppercase">Līna</span>
             <span className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold -mt-1">Klīnika</span>
           </div>
@@ -48,7 +53,12 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden fixed inset-0 bg-white z-50 p-8 flex flex-col gap-8 animate-in fade-in duration-300">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <img
+                src="/images/Zobarstnieciba Lina logo.jpg"
+                alt="Līna logo"
+                className="h-10 w-auto object-contain mix-blend-multiply"
+              />
               <span className="font-bold text-xl tracking-tight text-clinical-blue uppercase">Līna</span>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-clinical-blue font-bold text-xs tracking-widest uppercase">Aizvērt</button>
@@ -461,9 +471,16 @@ const Footer: React.FC = () => (
   <footer className="bg-clinical-blueLight py-16 border-t border-clinical-blue/10">
     <div className="container mx-auto px-6">
       <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-        <div className="flex flex-col items-center md:items-start">
-          <span className="font-bold text-2xl tracking-tight text-clinical-blue uppercase">Līna</span>
-          <span className="text-[10px] uppercase tracking-[0.5em] text-slate-400 font-bold">Zobārstniecība</span>
+        <div className="flex items-center gap-4">
+          <img
+            src="/images/Zobarstnieciba Lina logo.jpg"
+            alt="Līna logo"
+            className="h-10 w-auto object-contain mix-blend-multiply opacity-80"
+          />
+          <div className="flex flex-col border-l border-slate-200 pl-4 items-center md:items-start">
+            <span className="font-bold text-2xl tracking-tight text-clinical-blue uppercase">Līna</span>
+            <span className="text-[10px] uppercase tracking-[0.5em] text-slate-400 font-bold">Zobārstniecība</span>
+          </div>
         </div>
         <div className="text-slate-400 text-sm font-semibold tracking-wide text-center">
           © {new Date().getFullYear()} Zobārstniecības klīnika Līna. Visas tiesības aizsargātas.
